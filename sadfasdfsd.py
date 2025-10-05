@@ -1,0 +1,6 @@
+session['fer']
+session['crop']
+session['disease'] 
+session['yield'] 
+session['priceday'] 
+session['pricerate']

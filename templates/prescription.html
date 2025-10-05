@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<style>
+  body {
+    background-image: url("https://img.freepik.com/premium-photo/image-green-background-with-leaves_855892-10556.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100vh;
+    font-family: Arial, sans-serif;
+  }
+
+  .prescription-container {
+    background-color: #ffffffc7;
+    border-radius: 15px;
+    padding: 20px;
+    width: 600px;
+    margin: 30px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .prescription-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+
+  .prescription-item {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #34495e;
+  }
+
+  .btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn-download {
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-download:hover {
+    background-color: #2980b9;
+  }
+</style>
+
+<div class="prescription-container">
+  <div class="prescription-title">Farmer's Prescription</div>
+  
+  <div class="prescription-item"><strong>Name:</strong> {{ session['name'] }}</div>
+  <div class="prescription-item"><strong>Fertilizer Suggestion:</strong> {{ session['fer'] }}</div>
+  <div class="prescription-item"><strong>Crop:</strong> {{ session['crop'] }}</div>
+  <div class="prescription-item"><strong>Disease:</strong> {{ session['disease'] }}</div>
+  <div class="prescription-item"><strong>Predicted Yield:</strong> {{ session['yield'] }}</div>
+  <div class="prescription-item"><strong>Highest Price Day:</strong> {{ session['priceday'] }}</div>
+  <div class="prescription-item"><strong>Predicted Price Rate:</strong> ₹{{ session['pricerate'] }}</div>
+  
+  <div class="btn-container">
+    <button class="btn-download" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+  function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Add title
+    doc.setFontSize(22);
+    doc.text("Farmer's Prescription", 20, 20);
+
+    // Add content
+    doc.setFontSize(16);
+    doc.text("Name: {{ session['name'] }}", 20, 40);
+    doc.text("Fertilizer Suggestion: {{ session['fer'] }}", 20, 50);
+    doc.text("Crop: {{ session['crop'] }}", 20, 60);
+    doc.text("Disease: {{ session['disease'] }}", 20, 70);
+    doc.text("Predicted Yield: {{ session['yield'] }}", 20, 80);
+    doc.text("Highest Price Day: {{ session['priceday'] }}", 20, 90);
+    doc.text("Predicted Price Rate: ₹{{ session['pricerate'] }}", 20, 100);
+
+    // Save as PDF
+    doc.save("prescription.pdf");
+  }
+</script>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'layout.html' %} {% block body %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Fertilizer Prediction</title>
+</head>
+<style>
+      input[type=submit] {
+          background-color: #0066A2;
+          border-color: #0066A2;
+          border-style: outset;
+          color: white;
+          border: 1px solid #eee;
+          border-radius: 10px;
+          padding: 12px 25px;
+          font: bold 20px arial, sans-serif;
+          margin: 4px 2px;
+          cursor: pointer;
+      }
+      input[type="number"] {
+          font-family:courier;
+          height: 20px;
+          width: 190px;
+          border-radius: 10px;
+          text-align: center;
+      }
+      input[type="number"]::placeholder {
+          font-weight: lighter;
+          text-align: center;
+      }
+      body {
+            background: linear-gradient(#f69d3c, #3f87a6);
+              }
+      h1 {
+          color: white;
+          text-shadow: 1px 1px 2px red, 0 0 25px black;
+      }
+      select {
+           width: 200px;
+           text-align-last:center;
+           border-radius: 10px;
+           font-family:courier;
+           font-size:15px;
+           font-weight: bold;
+           height: 25px;
+      }
+    </style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img
+                  src="../static/images/bg1.svg"
+                  alt=""
+                  class="img-fluid"
+                  style="width: 100%"
+                />
+              </div>
+        
+         <div class="col-lg-6"> 
+            <h1><u>Fertilizer Prediction</u></h1>
+             <h1>{{x}}</h1>
+        
+             <!-- Main Input For Receiving Query to our ML -->
+            <form action="{{ url_for('fer_predict')}}" method="post" id="Home">
+        
+                <label for="Temperature" style="font-size:130%;"><b>Temperature:</b></label>
+                <input type="number" name="Temperature" placeholder="Enter the value" min="12" max="50" value="{{temp}}" required="required" /><br><br>
+        
+                <label for="pH" style="font-size:130%;"><b>pH :</b></label>
+                <input type="number" name="pH" placeholder="Enter the value" value="{{hum}}" min="4" max="16" required="required" /><br><br>
+        
+                <label for="Rainfall" style="font-size:130%;"><b>Rainfall:</b></label>
+                <input type="number" name="Rainfall" placeholder="Enter the value" value="{{moi}}" min="0" max="2000" required="required" /><br><br>
+        
+                <label for="color" style="font-size:130%;"><b>Soil Color:</b></label>
+                <select name="color" id="color" >
+                    <option value=0>Black</option>
+                    <option value=1>Dark Brown</option>
+                    <option value=2>Light Brown</option>
+                    <option value=3>Medium Brown</option>
+                    <option value=4>Red</option>
+                    <option value=5>Reddish Brown</option>
+                </select><br><br>
+        
+                <label for="crop" style="font-size:130%;"><b>Crop Type:</b></label>
+                <select name="crop" id="crop" >
+                    <option value=0>Cotton</option>
+                    <option value=1>Ginger</option>
+                    <option value=2>Gram</option>
+                    <option value=3>Grapes</option>
+                    <option value=4>Groundnut</option>
+                    <option value=5>Jowar</option>
+                    <option value=6>Maize</option>
+                    <option value=7>Masoor</option>
+                    <option value=8>Moong</option>
+                    <option value=9>Rice</option>
+                    <option value=10>Soybean</option>
+                    <option value=11>Maize</option>
+                    <option value=12>Masoor</option>
+                    <option value=13>Moong</option>
+                    <option value=14>Rice</option>
+                    <option value=15>Soybean</option>
+                </select><br><br>
+        
+                <label for="Nitrogen" style="font-size:130%;"><b>Nitrogen:</b></label>
+                <input type="number" name="Nitrogen" placeholder="Enter the value" min="20" max="200" value="{{n}}" required="required" /><br><br>
+        
+                <label for="Potassium" style="font-size:130%;"><b>Pottasium:</b></label>
+                <input type="number" name="Potassium" placeholder="Enter the value" min="20" max="200" value="{{k}}" required="required" /><br><br>
+        
+                <label for="Phosphorus" style="font-size:130%;"><b>Phosphorus:</b></label>
+                <input type="number" name="Phosphorus" placeholder="Enter the value" min="20" max="200" value="{{p}}" required="required" /><br><br>
+        
+                <input type="submit" >
+                
+            </form>
+            
+         </div>
+        
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>crop harvest</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Agro Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<style>
+		html {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 576px) {
+			html {
+				font-size: 1.25rem;
+			}
+		}
+
+		@media (min-width: 768px) {
+			html {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			html {
+				font-size: 1.75rem;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			html {
+				font-size: 2rem;
+			}
+
+			html {
+				font-size: 1rem;
+			}
+
+			h1 {
+				font-size: 1.2rem;
+			}
+
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			@media (min-width: 768px) {
+				html {
+					font-size: 1.1rem;
+				}
+
+				h1 {
+					font-size: 1.3rem;
+				}
+
+				h2 {
+					font-size: 1.2rem;
+				}
+			}
+
+			@media (min-width: 991px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.5rem;
+				}
+
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.7rem;
+				}
+
+				h2 {
+					font-size: 1.6rem;
+				}
+			}
+
+		}
+	</style>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	</body>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+	<!-- bootstrap css -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+	<!-- custom css -->
+	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	<!-- <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png?') }}"> -->
+
+
+	<script type="text/JavaScript" src="{{ url_for('static', filename='scripts/cities.js') }}"></script>
+
+
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese"
+		rel="stylesheet">
+	<!-- //google fonts -->
+	
+  <!-- Core theme CSS (includes Bootstrap)-->
+  
+
+
+	<style>
+		header {
+			background-color: rgba(30, 30, 30, 1);
+			margin-top: 0rem;
+			display: block;
+
+		}
+		a,nav{
+			color: black;
+			font-weight: bold;
+		}
+		.carousel-inner {
+                display: flex;
+                justify-content: center;
+            }
+            .carousel-item {
+                display: flex;
+                justify-content: center;
+            }
+            .flip-card {
+                background-color: transparent;
+                width: 200px;
+                height: 300px;
+                perspective: 1000px;
+                margin: 10px;
+            }
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+            }
+            .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+            .flip-card-front, .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .flip-card-front {
+                background: #f8f9fa;
+            }
+            .flip-card-front img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .flip-card-back {
+                background: #007bff;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: rotateY(180deg);
+                padding: 15px;
+            }
+
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg static-top" style="background-color: #000000;
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLW7fVr97oW8l9ZhZkv__Hh4Erjh7slMX-OyRfTrjSXLQX1Ie9B6WNFxEyeMAQ_skX5b8&usqp=CAU');background-repeat: no-repeat; background-attachment: fixed;
+    background-size: 100% 100vh; height: fit-content;">
+		<div class="container">
+			<a class="navbar-brand" href="{{ url_for('home') }}">
+				<img src="https://www.eduska.com/assets/user_logo/65ffbc67dd0aa782bc2a14204c8dde3d.jpg" style="width: 186px; height: 80px" alt="" class="C_logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link " href="{{ url_for('home') }}"
+						style="color: black; font-weight: bold;">Home
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('crop_recommend') }} " 
+						style="color: black; font-weight: bold;">Crop-recommend</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('yeild') }}"
+						style="color: black; font-weight: bold;">crop-yield </a>
+					</li>
+
+					<!-- <li class="nav-item">
+						<a class="nav-link" href="{{ url_for('crop_price') }}"
+						style="color: black; font-weight: bold;">crop-price </a>
+					</li> -->
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('crop_fer') }}"
+						style="color: black; font-weight: bold;">Fertilizer</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('disease_prediction') }}"
+						style="color: black; font-weight: bold;">Crop-disease</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('weather') }}"
+						style="color: black; font-weight: bold;">weather</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('stats') }}"
+						style="color: black; font-weight: bold;">price</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('prescription') }}"
+						style="color: black; font-weight: bold;">Prescription</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('logout') }}"
+						style="color: black; font-weight: bold;">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+
+	{% block body %} {% endblock %}
+
+
+       
+</body>
+
+</html>

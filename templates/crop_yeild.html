@@ -1,0 +1,325 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+  html body {
+    /* background-color: rgb(206, 206, 228); */
+    background-color: rgb(104 108 115);
+  }
+</style>
+<!--Form Section-->
+<br /><br />
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h2 class="Crop_cus">
+        <b>Find out the Yield of the crop  you Growing</b>
+      </h2>
+      <div class="uderline"></div>
+      <br />
+
+      <div
+        style="
+          width: 350px;
+          height: 50rem;
+          margin: 0px auto;
+          color: black;
+          border-radius: 25px;
+          padding: 10px 10px;
+        "
+      >
+        <form
+          method="POST"
+          action="{{ url_for('yeild_predict') }} "
+          style="line-height: 19.5px"
+        >
+          <!-- <div class="form-group">
+            <label for="Nitrogen" style="font-size: 17px"
+              ><b style="text-transform: capitalize; color: white"
+                >Year</b
+              ></label
+            >
+            <input
+              type="number"
+              name="year"
+              class="form-control"
+              min="1997"
+              max="2024"
+              placeholder="enter year"
+            />
+          </div> -->
+          <div class="form-group">
+            <label
+              for="season"
+              style="text-transform: capitalize; font-weight: bold"
+              >Season</label
+            >
+
+            <select name="season" id="season" class="form-control">
+              <option value="1">Autumn</option>
+              <option value="2">Kharif</option>
+              <option value="3">Rabi</option>
+              <option value="4">Summer</option>
+              <option value="5">Whole Year</option>
+              <option value="6">Winter</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label
+              for="crop"
+              style="text-transform: capitalize; font-weight: bold"
+              >Crop</label
+            >
+
+            <select name="crop" id="crop" class="form-control">
+              <option value="1">Apple</option>
+              <option value="2">Arcanut(Processed)</option>
+              <option value="3">Arecanut</option>
+              <option value="4">Arhar/Tur</option>
+              <option value="5">Ash Gourd</option>
+              <option value="6">Atcanut(Raw)</option>
+              <option value="7">Bajra</option>
+              <option value="8">Banana</option>
+              <option value="9">Barley</option>
+              <option value="10">Bean</option>
+              <option value="11">Beans & Mutter(Vegetable)</option>
+              <option value="12">Beet Root</option>
+              <option value="13">Ber</option>
+              <option value="14">Bhindi</option>
+              <option value="15">Bitter Gourd</option>
+              <option value="16">Black pepper</option>
+              <option value="17">Blackgram</option>
+              <option value="18">Bottle Gourd</option>
+              <option value="19">Brinjal</option>
+              <option value="20">cabbage</option>
+              <option value="21">Cardamom</option>
+              <option value="22">Carrot</option>
+              <option value="23">Cashewnut</option>
+              <option value="24">cashewnut processed</option>
+              <option value="25">Cashewnut Raw</option>
+              <option value="26">Castor seed</option>
+              <option value="27">cauliflower</option>
+              <option value="28">Citrus Fruit</option>
+              <option value="29">Coconut</option>
+              <option value="30">Coffee</option>
+              <option value="31">Colocosia</option>
+              <option value="32">Cond-spcs other</option>
+              <option value="33">Coriander</option>
+              <option value="34">Cotton(lint)</option>
+              <option value="35">cowpea(Lobia)</option>
+              <option value="36">Cucumber</option>
+              <option value="37">Drum Stick</option>
+              <option value="38">Dry Chillies</option>
+              <option value="39">Dry ginger</option>
+              <option value="40">Garlic</option>
+              <option value="41">Ginger</option>
+              <option value="42">Gram</option>
+              <option value="43">Grapes</option>
+              <option value="44">Groundnut</option>
+              <option value="45">Gaur seed</option>
+              <option value="46">Horse-gram</option>
+              <option value="47">Jack Fruit</option>
+              <option value="48">Jobster</option>
+              <option value="49">Jowar</option>
+              <option value="50">Jute</option>
+              <option value="51">Jute & mesta</option>
+              <option value="52">Kapas</option>
+              <option value="53">Khesari</option>
+              <option value="54">Korra</option>
+              <option value="55">Lab-Lab</option>
+              <option value="56">Lemon</option>
+              <option value="57">Lentil</option>
+              <option value="58">Linseed</option>
+              <option value="59">Litchi</option>
+              <option value="60">Maize</option>
+              <option value="61">Mango</option>
+              <option value="62">Masoor</option>
+              <option value="63">Mesta</option>
+              <option value="64">Moong(Green Gram)</option>
+              <option value="65">Moth</option>
+              <option value="66">Niger seed</option>
+              <option value="67">oilseeds total</option>
+              <option value="68">Onion</option>
+              <option value="69">Orange</option>
+              <option value="70">other Rabi pulses</option>
+              <option value="71">other Cereals & Millets</option>
+              <option value="72">other Citrus Fruit</option>
+              <option value="73">other Dry Fruit</option>
+              <option value="74">other fibres</option>
+              <option value="75">other Fresh Fruits</option>
+              <option value="76">other Kharif pulses</option>
+              <option value="77">other misc.pulses</option>
+              <option value="78">other oilseeds</option>
+              <option value="79">other Vegetables</option>
+              <option value="80">Paddy</option>
+              <option value="81">Papaya</option>
+              <option value="82">Peach</option>
+              <option value="83">pear</option>
+              <option value="84">Peas(Vegetable)</option>
+              <option value="85">Peas & beans(Pulses)</option>
+              <option value="86">Perilla</option>
+              <option value="87">Pineapple</option>
+              <option value="88">Plums</option>
+              <option value="89">Pome Fruit</option>
+              <option value="90">Pome Granet</option>
+              <option value="91">Potato</option>
+              <option value="92">Pulses total</option>
+              <option value="93">Pump Kin</option>
+              <option value="94">Ragi</option>
+              <option value="95">Rajmash Kholar</option>
+              <option value="96">Rapeseed & Mustard</option>
+              <option value="97">Redish</option>
+              <option value="98">Ribed Guard</option>
+              <option value="99">Rice</option>
+              <option value="100">Ricebean(nagadal)</option>
+              <option value="101">Rubber</option>
+              <option value="102">Safflower</option>
+              <option value="103">Samai</option>
+              <option value="104">Sannhamp</option>
+              <option value="103">Sapota</option>
+              <option value="104">Sesamum</option>
+              <option value="105">Small millets</option>
+              <option value="106">Snak Guard</option>
+              <option value="107">Soyabean</option>
+              <option value="108">Sugarcane</option>
+              <option value="109">Sunflower</option>
+              <option value="110">Sweet potato</option>
+              <option value="111">Tapioca</option>
+              <option value="112">Tea</option>
+              <option value="113">Tobacco</option>
+              <option value="114">Tomato</option>
+              <option value="115">Total foodgrain</option>
+              <option value="116">Turmeric</option>
+              <option value="117">Turnip</option>
+              <option value="118">Urad</option>
+              <option value="119">Varagu</option>
+              <option value="120">Water Melon</option>
+              <option value="121">Wheat</option>
+              <option value="122">Yam</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Nitrogen" style="font-size: 17px"
+              ><b>Temperature</b></label
+            >
+            <input
+              type="number"
+              name="Temperature"
+              class="form-control"
+              value="{{temp}}"
+              placeholder="Enter Temperature value"
+              
+              min="20"
+              max="40"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="Nitrogen" style="font-size: 17px"
+              ><b>humidity</b></label
+            >
+            <input
+              type="number"
+              name="humidity"
+              class="form-control"
+              value="{{hum}}"
+              placeholder="Enter Humidity value"
+              min="35"
+              max="60"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="Nitrogen" style="font-size: 17px"
+              ><b style="text-transform: capitalize">soilmoisture</b></label
+            >
+            <input
+              type="number"
+              name="soilmoisture"
+              class="form-control"
+              value="{{moi}}"
+              min="45"
+              max="65"
+              placeholder="Enter soilmoisture value"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="Nitrogen" style="font-size: 17px"
+              ><b style="text-transform: capitalize">area</b></label
+            >
+            <input
+              type="number"
+              name="area"
+              class="form-control"
+              placeholder="Enter area in hector"
+              min="1"
+              max="100"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="State" style="font-size: 17px"
+              ><b style="text-transform: capitalize">State</b></label
+            >
+            <select
+              onchange="print_city1('state', this.selectedIndex);"
+              id="sts"
+              name="stt"
+              class="form-control"
+              style="font-weight: bold; color: black"
+              required
+            ></select>
+            <br />
+            <label for="City" style="font-size: 17px"
+              ><b style="text-transform: capitalize">District</b></label
+            >
+            <select
+              id="state"
+              class="form-control"
+              name="city"
+              style="font-weight: bold; color: black"
+              required
+            ></select>
+            <script language="javascript">
+              print_state1("sts");
+            </script>
+          </div>
+
+
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-info"
+              style="
+                color: black;
+                font-weight: bold;
+                width: 130px;
+                height: 50px;
+                border-radius: 29px;
+                font-size: 21px;
+                background-color: cadetblue;
+              "
+            >
+              Predict
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col">
+      
+      <img
+        src="../static/images/bg1.svg"
+        alt=""
+        class="img-fluid"
+        style="height: 700px; width: 740px"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Form section -->
+
+{% endblock %}

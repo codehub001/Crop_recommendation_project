@@ -1,0 +1,146 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- banner -->
+<section class="banner_w3lspvt" id="home">
+	<div class="csslider infinity" id="slider1">
+	
+				<div class="banner-top">
+					<div class="overlay">
+						<div class="container">
+							<div class="w3layouts-banner-info text-center">
+								<h3 class="text-wh">Crop Harvest</h3>
+								<h4 class="text-wh mx-auto my-4"><b>Improving Grain Traders Profitability by Quantifying Weather’s Impact on Grain Yields</b></h4>
+								<br>
+								<h4 class="text-wh mx-auto my-4"><strong> Here are some questions we'll answer</strong></h4>
+								<p class="text-li mx-auto mt-2">
+									1. Do you know how much yield you can expect?<br>
+									2. How much does the yeild pay you??<br>
+									3. Which Crop is Good for You?
+								</p>
+
+								<div style="padding-top: 79px;">
+									<a class="explore" href="{{ url_for('crop_recommend') }}">Explore Our System</a>
+								</div>	
+								<div class="learn_more">
+									Learn More
+									<div>
+										
+									</div>
+									<Div class="page_down" style="width: 2em; height: 2em; background-color: transparent; z-index: 80; 
+									bottom: 25px; position: absolute; border-width: 0 0.25em 0.25em 0; border-style: solid;
+									 border-color: #1dd800; animation: scrolldown 1.2s ease-in-out infinite 0.15s;">
+	  </Div>
+	  <Div class="page_down" style="width: 2em; height: 2em; background-color: transparent; z-index: 80; 
+					  bottom: 40px; position: absolute; border-width: 0 0.25em 0.25em 0; border-style: solid; border-color: #1dd800; animation: scrolldown 1.2s ease-in-out infinite;">
+	  </Div>
+									<!-- <span class="create"></span> -->
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+</section>
+<!-- //banner -->
+<div class="container mt-5">
+	<h2 class="text-center">Soil Testing Centers</h2>
+	<div class="text-center">
+		<iframe src="/static/map.html" width="800" height="500" style="border:none;"></iframe>
+		<br>
+		<a href="/static/map.html" target="_blank" class="btn btn-primary mt-3">Open in New Tab</a>
+	</div>
+	<p class="text-li mx-auto mt-2" align="center">
+		1. Improved Crop Productivity 🌾: </br>
+
+	Soil testing provides farmers with accurate data on soil health, including pH levels, nutrient content, and organic matter.
+	This helps in selecting the right fertilizers and boosting crop yield efficiently. </br>
+	    2. Prevention of Over-Fertilization 🚜 : </br>
+	
+	Overuse of fertilizers can damage soil health and pollute water sources.
+	Soil testing ensures optimal nutrient application, reducing costs and environmental impact. </br>
+	    3. Identification of Soil Contaminants ⚠️ : </br>
+	
+	Advanced soil testing detects harmful elements like heavy metals and pesticide residues.
+	This helps maintain soil quality and food safety, ensuring healthier crops.
+	</p>
+	
+		  <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  </a>
+	  </div>
+  </div>
+  
+</div>
+
+<!-- core values -->
+<section class="core-value py-5">
+	<div class="container py-md-4">
+		<h3 class="heading mb-sm-5 mb-4 text-center"> About Us</h3>
+		<div class="row core-grids">
+			
+			<div class="col-lg-6 core-left">
+				<h3 class="mt-4" style="text-align: justify;">Improving Agriculture, Improving Lives, Cultivating Crops To Make Farmers Increase
+					Profit.</h3>
+				<p class="mt-3" style="text-align: justify;">We use state-of-the-art machine learning and deep learning technologies to help you
+					guide through
+					the entire farming process. Make informed decisions to understand the demographics of your area,
+					understand the
+					factors that affect your crop and keep them healthy for a super awesome successful yield.</p>
+			</div>
+			<div class="col-lg-6 core-right">
+				<img src="https://ricenewstoday.com/wp-content/uploads/2024/04/141357422be806e.gif" class="img-fluid" alt="" />
+			</div>
+		</div>
+	</div>
+</section>
+</header>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="http://127.0.0.1:5000/static/js/scripts.js"></script>
+<script>
+  function toggleform(e) {
+  var Id =(e.target.getAttribute('data-value'))
+  let Items= ['#form1', '#form2'];
+  Items.map(function(item) {
+	  if(Id === item ) {
+		  $(item).addClass("active");
+	  }
+	  else {
+	  $(item).removeClass("active");
+	  }
+  })
+}
+
+</script>
+<!-- //core values -->
+
+
+<!-- //Products & Services -->
+
+
+<!-- Creating custom grid and hover effect
+<section>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <img class="img-responsive" src="images/s2.jpg" alt="">
+        <div class="overlay">
+           <h2>Hover effect 1</h2>
+           <a class="info" href="#">link here</a>
+        </div>
+    </div>
+</div> -->
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8d0e8bb4748f2312bebd5e60c14998f4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8d0e8bb4748f2312bebd5e60c14998f4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8d0e8bb4748f2312bebd5e60c14998f4 = L.map(
+                "map_8d0e8bb4748f2312bebd5e60c14998f4",
+                {
+                    center: [13.0378, 77.619],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_eaf9e2343fdb081a0bdab81e73eb6380 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_eaf9e2343fdb081a0bdab81e73eb6380.addTo(map_8d0e8bb4748f2312bebd5e60c14998f4);
+        
+    
+            var marker_7fbf9830725977c4318938ebfc0b6d1a = L.marker(
+                [13.0378, 77.619],
+                {
+}
+            ).addTo(map_8d0e8bb4748f2312bebd5e60c14998f4);
+        
+    
+            var icon_15786cfd18b3b0c0614efd92a4dc324e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7fbf9830725977c4318938ebfc0b6d1a.setIcon(icon_15786cfd18b3b0c0614efd92a4dc324e);
+        
+    
+        var popup_d495bc8ee154b7d944f65da1698bf020 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72d83e3e6534f85e93fdd8dfe339948f = $(`<div id="html_72d83e3e6534f85e93fdd8dfe339948f" style="width: 100.0%; height: 100.0%;">Your Location</div>`)[0];
+                popup_d495bc8ee154b7d944f65da1698bf020.setContent(html_72d83e3e6534f85e93fdd8dfe339948f);
+            
+        
+
+        marker_7fbf9830725977c4318938ebfc0b6d1a.bindPopup(popup_d495bc8ee154b7d944f65da1698bf020)
+        ;
+
+        
+    
+    
+            var marker_4c8fff6bf6e5c0ddc82733861394fb71 = L.marker(
+                [13.0578, 77.639],
+                {
+}
+            ).addTo(map_8d0e8bb4748f2312bebd5e60c14998f4);
+        
+    
+            var icon_1440996c8b45ff42fb079a12a8fd5b2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4c8fff6bf6e5c0ddc82733861394fb71.setIcon(icon_1440996c8b45ff42fb079a12a8fd5b2d);
+        
+    
+        var popup_1088dbd0c663123ca1b7209b801c5f47 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e77426cdbdf39d310519d6a76fcbddac = $(`<div id="html_e77426cdbdf39d310519d6a76fcbddac" style="width: 100.0%; height: 100.0%;">Soil Testing Center 1</div>`)[0];
+                popup_1088dbd0c663123ca1b7209b801c5f47.setContent(html_e77426cdbdf39d310519d6a76fcbddac);
+            
+        
+
+        marker_4c8fff6bf6e5c0ddc82733861394fb71.bindPopup(popup_1088dbd0c663123ca1b7209b801c5f47)
+        ;
+
+        
+    
+    
+            var marker_df27a8e2d52c0bd046cd0708c3cc522c = L.marker(
+                [13.007800000000001, 77.629],
+                {
+}
+            ).addTo(map_8d0e8bb4748f2312bebd5e60c14998f4);
+        
+    
+            var icon_3e726913843a8344103248429244a3e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_df27a8e2d52c0bd046cd0708c3cc522c.setIcon(icon_3e726913843a8344103248429244a3e6);
+        
+    
+        var popup_e538cd6b99cb61fba3c2291c312d2911 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7063093cd95743ff877125f75551e00 = $(`<div id="html_b7063093cd95743ff877125f75551e00" style="width: 100.0%; height: 100.0%;">Soil Testing Center 2</div>`)[0];
+                popup_e538cd6b99cb61fba3c2291c312d2911.setContent(html_b7063093cd95743ff877125f75551e00);
+            
+        
+
+        marker_df27a8e2d52c0bd046cd0708c3cc522c.bindPopup(popup_e538cd6b99cb61fba3c2291c312d2911)
+        ;
+
+        
+    
+    
+            var marker_9c6053c4bffb2e1381df2ae90f778a18 = L.marker(
+                [13.0478, 77.599],
+                {
+}
+            ).addTo(map_8d0e8bb4748f2312bebd5e60c14998f4);
+        
+    
+            var icon_15c90d0dd8dbdafedfad6ff56a578d9e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9c6053c4bffb2e1381df2ae90f778a18.setIcon(icon_15c90d0dd8dbdafedfad6ff56a578d9e);
+        
+    
+        var popup_ccd916b4b685a124de9cde30582aeb6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf07ab473775ee82051854390cfbd785 = $(`<div id="html_bf07ab473775ee82051854390cfbd785" style="width: 100.0%; height: 100.0%;">Soil Testing Center 3</div>`)[0];
+                popup_ccd916b4b685a124de9cde30582aeb6d.setContent(html_bf07ab473775ee82051854390cfbd785);
+            
+        
+
+        marker_9c6053c4bffb2e1381df2ae90f778a18.bindPopup(popup_ccd916b4b685a124de9cde30582aeb6d)
+        ;
+
+        
+    
+    
+            var marker_0b25fd9ca954fbdc9b21aec8549a603f = L.marker(
+                [13.017800000000001, 77.589],
+                {
+}
+            ).addTo(map_8d0e8bb4748f2312bebd5e60c14998f4);
+        
+    
+            var icon_1904c7c01e5cd7c4f50d038e3ab981ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0b25fd9ca954fbdc9b21aec8549a603f.setIcon(icon_1904c7c01e5cd7c4f50d038e3ab981ba);
+        
+    
+        var popup_b9711fc038eb0b7d61dff5d6eabf4c2e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_206e46f38ec15ce340c6b31279194e68 = $(`<div id="html_206e46f38ec15ce340c6b31279194e68" style="width: 100.0%; height: 100.0%;">Soil Testing Center 4</div>`)[0];
+                popup_b9711fc038eb0b7d61dff5d6eabf4c2e.setContent(html_206e46f38ec15ce340c6b31279194e68);
+            
+        
+
+        marker_0b25fd9ca954fbdc9b21aec8549a603f.bindPopup(popup_b9711fc038eb0b7d61dff5d6eabf4c2e)
+        ;
+
+        
+    
+    
+            var marker_8fcbdbdeacf36aaba562ece6a71972d0 = L.marker(
+                [13.0678, 77.649],
+                {
+}
+            ).addTo(map_8d0e8bb4748f2312bebd5e60c14998f4);
+        
+    
+            var icon_0ac5111e97de67206b8a92554ea108c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8fcbdbdeacf36aaba562ece6a71972d0.setIcon(icon_0ac5111e97de67206b8a92554ea108c9);
+        
+    
+        var popup_6af8df9a0e399deb6bb1fd602d35ea52 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54e1d72c3ad6d77e00e17dc73fe542d4 = $(`<div id="html_54e1d72c3ad6d77e00e17dc73fe542d4" style="width: 100.0%; height: 100.0%;">Soil Testing Center 5</div>`)[0];
+                popup_6af8df9a0e399deb6bb1fd602d35ea52.setContent(html_54e1d72c3ad6d77e00e17dc73fe542d4);
+            
+        
+
+        marker_8fcbdbdeacf36aaba562ece6a71972d0.bindPopup(popup_6af8df9a0e399deb6bb1fd602d35ea52)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,126 @@
+{% extends 'layout.html' %} {% block body %}
+<style>
+    body{
+    background-image: url("https://img.freepik.com/premium-photo/image-green-background-with-leaves_855892-10556.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 200vh;
+    height: 1200px;
+  }
+  .price-container {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            width: fit-content;
+        }
+        .price-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .price-details {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+</style>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link> -->
+        <!-- Favicon-->
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="http://127.0.0.1:5000/static/css/styles.css" rel="stylesheet" />
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="Box">
+                        <center><h3 style="color: black; font-weight: bold;">Crop Stats</h3></center>
+                        <hr>
+                        <br>
+                        <form method="post" action="/stats">
+                            
+                              <div class="form-group">
+                                <label
+                                  for="season"
+                                  style="text-transform: capitalize;color: black; font-weight: bold"
+                                  >Choose Crop</label
+                                >
+                    
+                                <select name="season" id="season" class="form-control">
+                                  <option value="apple.csv">Apple</option>
+                                  <option value="carrot.csv">Carrot</option>
+                                  <option value="rice.csv">Rice</option>
+                                  <option value="wheat.csv">Wheat</option>
+                                  <option value="cotton.csv">Cotton</option>
+                                  <option value="maize.csv">Maize</option>
+                                  <option value="onion.csv">Onion</option>
+                                  <option value="tomato.csv">Tomato</option>
+                                </select>
+                              </div>
+                              
+                    <br>
+                              <div class="d-flex justify-content-center">
+                                <button
+                                  type="submit"
+                                  class="btn btn-success"
+                                  style="color: black; font-weight: bold;"
+                                >
+                                  Predict
+                                </button>
+                              </div>
+
+                              
+                              <div class="price-container">
+                                <div class="price-title">Price Prediction Results</div>
+                                {% if high_month and high_price %}
+                                    <div class="price-details">
+                                        <strong>Month and Year with Highest Price:</strong> {{ high_month }}
+                                    </div>
+                                    <div class="price-details">
+                                        <strong>Predicted Highest Price:</strong> ₹{{ high_price }}
+                                    </div>
+                                {% else %}
+                                    <div class="price-details">
+                                        No prediction data available at the moment.
+                                    </div>
+                                {% endif %}
+                            </div>
+
+
+                          </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="Box1">
+                        <center><h3 style="color: black; font-weight: bold;">Output</h3></center>
+                        <hr>
+                        <br>
+                        <img src="http://127.0.0.1:5000/static/result_stats.png" alt="" style="width: 100%;">
+                        <!-- result_stats.png -->
+                       <!-- <h3> {{prediction}}</h3> -->
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="http://127.0.0.1:5000/static/js/scripts.js"></script>
+        
+
+{% endblock %}
